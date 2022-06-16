@@ -1,0 +1,35 @@
+AlgoBox : tp-algo-bank 
+Code de l'algorithme 
+1 FONCTIONS_UTILISEES 
+2 VARIABLES 
+3 decouAut EST_DU_TYPE NOMBRE 
+4 decouUtl EST_DU_TYPE NOMBRE 
+5 nbrJour EST_DU_TYPE NOMBRE 
+6 Agios EST_DU_TYPE NOMBRE 
+7 DEBUT_ALGORITHME 
+8 AFFICHER "Saisissez votre découvert autorisé " 
+9 LIRE decouAut 
+10 SI (decouAut==0) ALORS 
+11 DEBUT_SI 
+12 AFFICHER "Découvert non autorisé => pas d'agios" 
+13 FIN_SI 
+14 TANT_QUE (decouAut<100 OU decouAut>2000) FAIRE 
+15 DEBUT_TANT_QUE 
+16 AFFICHER "Le découvert autorisé est compris entre 100€ et 2000€" 
+17 LIRE decouAut 
+18 FIN_TANT_QUE 
+19 AFFICHER "Saisissez le montant du découvert utilisé " 
+20 LIRE decouUtl 
+21 AFFICHER "Depuis combien de jour êtes-vous en découvert " 
+22 LIRE nbrJour 
+23 TANT_QUE (nbrJour<1 OU nbrJour>365) FAIRE 
+24 DEBUT_TANT_QUE 
+25 AFFICHER "Le nombre de jour doit être compris entre 1 et 365" 
+26 LIRE nbrJour 
+27 FIN_TANT_QUE 
+28 AFFICHER "Avec un taux de 10%, vos agios à payer sont de : " 
+29 AFFICHERCALCUL ALGOBOX_ARRONDIR(Agios,2), Agios=decouUtl*nbrJour*(10/100)/365 
+30 FIN_ALGORITHME 
+Résultats 
+Généré par AlgoBox
+
