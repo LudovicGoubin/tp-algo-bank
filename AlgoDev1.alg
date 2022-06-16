@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description texte="" courant="FIN_TANT_QUE"/>
+    <description texte="" courant="PAUSE"/>
     <extension extnom="inactif"/>
     <fonction fctcode="" fctetat="inactif"/>
     <F2 F2defaut="" F2etat="inactif" F2para="" F2lignes=""/>
@@ -15,9 +15,12 @@
         <item code="1#NOMBRE#Balance" algoitem="Balance EST_DU_TYPE NOMBRE"/>
     </item>
     <item code="101#debutalgo" algoitem="DEBUT_ALGORITHME">
+        <item code="4#Bienvenue chez GTM Bank#1" algoitem="AFFICHER &quot;Bienvenue chez GTM Bank&quot;"/>
+        <item code="4#Voulez vous avoir un découvert (y ou Y oui, n'importe quel caractère pour non)#1" algoitem="AFFICHER &quot;Voulez vous avoir un découvert (y ou Y oui, n'importe quel caractère pour non)&quot;"/>
+        <item code="2#isOverdraft#pasliste" algoitem="LIRE isOverdraft"/>
+        <item code="18#pause" algoitem="PAUSE"/>
         <item code="6#isOverdraft=y OR isOverdraft=Y" algoitem="SI (isOverdraft=y OR isOverdraft=Y) ALORS">
             <item code="7#debutsi" algoitem="DEBUT_SI"/>
-            <item code="5#isOverdraft#y OR Y#pasliste" algoitem="isOverdraft PREND_LA_VALEUR y OR Y"/>
             <item code="2#Overdraft#pasliste" algoitem="LIRE Overdraft"/>
             <item code="15#Overdraft&lt;100 ET Overdraft>2000" algoitem="TANT_QUE (Overdraft&lt;100 ET Overdraft>2000) FAIRE">
                 <item code="16#debuttantque" algoitem="DEBUT_TANT_QUE"/>
