@@ -1,46 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description texte="" courant="PAUSE"/>
+    <description texte="" courant="AFFICHER Balance"/>
     <extension extnom="inactif"/>
-    <fonction fctcode="" fctetat="inactif"/>
-    <F2 F2defaut="" F2etat="inactif" F2para="" F2lignes=""/>
+    <fonction fctetat="inactif" fctcode=""/>
+    <F2 F2defaut="" F2lignes="" F2para="" F2etat="inactif"/>
     <repere repetat="inactif" repcode="-10#10#-10#10#2#2"/>
-    <param nbDecimales="8" epaisseurPoint="2" totalBoucles="5000000" epaisseurLigne="2" maxBoucle="500000" arrondiAuto="vrai" totalAffichages="1000"/>
-    <item code="200#declarationfonctions" algoitem="FONCTIONS_UTILISEES"/>
-    <item code="100#declarationsvariables" algoitem="VARIABLES">
-        <item code="1#NOMBRE#Deposit" algoitem="Deposit EST_DU_TYPE NOMBRE"/>
-        <item code="1#NOMBRE#Overdraft" algoitem="Overdraft EST_DU_TYPE NOMBRE"/>
-        <item code="1#CHAINE#isOverdraft" algoitem="isOverdraft EST_DU_TYPE CHAINE"/>
-        <item code="1#CHAINE#notOverdraft" algoitem="notOverdraft EST_DU_TYPE CHAINE"/>
-        <item code="1#NOMBRE#Balance" algoitem="Balance EST_DU_TYPE NOMBRE"/>
+    <param epaisseurPoint="2" nbDecimales="8" totalAffichages="1000" arrondiAuto="vrai" maxBoucle="500000" totalBoucles="5000000" epaisseurLigne="2"/>
+    <item algoitem="FONCTIONS_UTILISEES" code="200#declarationfonctions"/>
+    <item algoitem="VARIABLES" code="100#declarationsvariables">
+        <item algoitem="Deposit EST_DU_TYPE NOMBRE" code="1#NOMBRE#Deposit"/>
+        <item algoitem="Overdraft EST_DU_TYPE NOMBRE" code="1#NOMBRE#Overdraft"/>
+        <item algoitem="isOverdraft EST_DU_TYPE CHAINE" code="1#CHAINE#isOverdraft"/>
+        <item algoitem="Balance EST_DU_TYPE NOMBRE" code="1#NOMBRE#Balance"/>
     </item>
-    <item code="101#debutalgo" algoitem="DEBUT_ALGORITHME">
-        <item code="4#Bienvenue chez GTM Bank#1" algoitem="AFFICHER &quot;Bienvenue chez GTM Bank&quot;"/>
-        <item code="4#Voulez vous avoir un découvert (y ou Y oui, n'importe quel caractère pour non)#1" algoitem="AFFICHER &quot;Voulez vous avoir un découvert (y ou Y oui, n'importe quel caractère pour non)&quot;"/>
-        <item code="2#isOverdraft#pasliste" algoitem="LIRE isOverdraft"/>
-        <item code="18#pause" algoitem="PAUSE"/>
-        <item code="6#isOverdraft=y OR isOverdraft=Y" algoitem="SI (isOverdraft=y OR isOverdraft=Y) ALORS">
-            <item code="7#debutsi" algoitem="DEBUT_SI"/>
-            <item code="2#Overdraft#pasliste" algoitem="LIRE Overdraft"/>
-            <item code="15#Overdraft&lt;100 ET Overdraft>2000" algoitem="TANT_QUE (Overdraft&lt;100 ET Overdraft>2000) FAIRE">
-                <item code="16#debuttantque" algoitem="DEBUT_TANT_QUE"/>
-                <item code="2#Overdraft#pasliste" algoitem="LIRE Overdraft"/>
-                <item code="17#fintantque" algoitem="FIN_TANT_QUE"/>
+    <item algoitem="DEBUT_ALGORITHME" code="101#debutalgo">
+        <item algoitem="AFFICHER &quot;Bienvenue chez GTM Bank&quot;" code="4#Bienvenue chez GTM Bank#1"/>
+        <item algoitem="AFFICHER &quot;Voulez vous avoir un découvert (y ou Y oui, n'importe quel caractère pour non)&quot;" code="4#Voulez vous avoir un découvert (y ou Y oui, n'importe quel caractère pour non)#1"/>
+        <item algoitem="LIRE isOverdraft" code="2#isOverdraft#pasliste"/>
+        <item algoitem="SI (isOverdraft==&quot;y&quot; OU isOverdraft==&quot;Y&quot;) ALORS" code="6#isOverdraft==&quot;y&quot; OU isOverdraft==&quot;Y&quot;">
+            <item algoitem="DEBUT_SI" code="7#debutsi"/>
+            <item algoitem="LIRE Overdraft" code="2#Overdraft#pasliste"/>
+            <item algoitem="TANT_QUE (Overdraft&lt;100 ET Overdraft>2000) FAIRE" code="15#Overdraft&lt;100 ET Overdraft>2000">
+                <item algoitem="DEBUT_TANT_QUE" code="16#debuttantque"/>
+                <item algoitem="LIRE Overdraft" code="2#Overdraft#pasliste"/>
+                <item algoitem="FIN_TANT_QUE" code="17#fintantque"/>
             </item>
-            <item code="8#finsi" algoitem="FIN_SI"/>
-            <item code="9#sinon" algoitem="SINON">
-                <item code="10#debutsinon" algoitem="DEBUT_SINON"/>
-                <item code="2#Deposit#pasliste" algoitem="LIRE Deposit"/>
-                <item code="15#Deposit&lt;500" algoitem="TANT_QUE (Deposit&lt;500) FAIRE">
-                    <item code="16#debuttantque" algoitem="DEBUT_TANT_QUE"/>
-                    <item code="2#Deposit#pasliste" algoitem="LIRE Deposit"/>
-                    <item code="17#fintantque" algoitem="FIN_TANT_QUE"/>
+            <item algoitem="AFFICHER &quot;Le montant de votre découvert est de: &quot;" code="4#Le montant de votre découvert est de: #0"/>
+            <item algoitem="AFFICHER Overdraft" code="3#Overdraft#0#pasliste"/>
+            <item algoitem="LIRE Deposit" code="2#Deposit#pasliste"/>
+            <item algoitem="TANT_QUE (Deposit&lt;500) FAIRE" code="15#Deposit&lt;500">
+                <item algoitem="DEBUT_TANT_QUE" code="16#debuttantque"/>
+                <item algoitem="LIRE Deposit" code="2#Deposit#pasliste"/>
+                <item algoitem="FIN_TANT_QUE" code="17#fintantque"/>
+            </item>
+            <item algoitem="FIN_SI" code="8#finsi"/>
+            <item algoitem="SINON" code="9#sinon">
+                <item algoitem="DEBUT_SINON" code="10#debutsinon"/>
+                <item algoitem="Deposit PREND_LA_VALEUR 0" code="5#Deposit#0#pasliste"/>
+                <item algoitem="TANT_QUE (Deposit&lt;500) FAIRE" code="15#Deposit&lt;500">
+                    <item algoitem="DEBUT_TANT_QUE" code="16#debuttantque"/>
+                    <item algoitem="AFFICHER &quot;Le montant de votre dépot doit etre supérieur à 500euros&quot;" code="4#Le montant de votre dépot doit etre supérieur à 500euros#0"/>
+                    <item algoitem="LIRE Deposit" code="2#Deposit#pasliste"/>
+                    <item algoitem="FIN_TANT_QUE" code="17#fintantque"/>
                 </item>
-                <item code="11#finsinon" algoitem="FIN_SINON"/>
+                <item algoitem="FIN_SINON" code="11#finsinon"/>
             </item>
         </item>
-        <item code="3#Deposit#0#pasliste" algoitem="AFFICHER Deposit"/>
-        <item code="3#Overdraft#0#pasliste" algoitem="AFFICHER Overdraft"/>
+        <item algoitem="AFFICHER &quot;Vos informations bancaires sont les suivantes: &quot;" code="4#Vos informations bancaires sont les suivantes: #1"/>
+        <item algoitem="Balance PREND_LA_VALEUR Deposit" code="5#Balance#Deposit#pasliste"/>
+        <item algoitem="AFFICHER &quot;Le soldes de vos comptes est de: &quot;" code="4#Le soldes de vos comptes est de: #0"/>
+        <item algoitem="AFFICHER Balance" code="3#Balance#1#pasliste"/>
+        <item algoitem="AFFICHER &quot;Votre découvert autorisé est de: &quot;" code="4#Votre découvert autorisé est de: #0"/>
+        <item algoitem="AFFICHER Overdraft" code="3#Overdraft#0#pasliste"/>
     </item>
-    <item code="102#finalgo" algoitem="FIN_ALGORITHME"/>
+    <item algoitem="FIN_ALGORITHME" code="102#finalgo"/>
 </Algo>
