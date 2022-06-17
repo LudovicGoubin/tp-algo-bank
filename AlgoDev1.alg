@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description texte="" courant="AFFICHER Balance"/>
+    <description texte="" courant="TANT_QUE (Overdraft&lt;100 OU Overdraft>2000) FAIRE"/>
     <extension extnom="inactif"/>
-    <fonction fctetat="inactif" fctcode=""/>
-    <F2 F2defaut="" F2lignes="" F2para="" F2etat="inactif"/>
-    <repere repetat="inactif" repcode="-10#10#-10#10#2#2"/>
-    <param epaisseurPoint="2" nbDecimales="8" totalAffichages="1000" arrondiAuto="vrai" maxBoucle="500000" totalBoucles="5000000" epaisseurLigne="2"/>
+    <fonction fctcode="" fctetat="inactif"/>
+    <F2 F2lignes="" F2defaut="" F2para="" F2etat="inactif"/>
+    <repere repcode="-10#10#-10#10#2#2" repetat="inactif"/>
+    <param maxBoucle="500000" epaisseurLigne="2" totalAffichages="1000" arrondiAuto="vrai" totalBoucles="5000000" epaisseurPoint="2" nbDecimales="8"/>
     <item algoitem="FONCTIONS_UTILISEES" code="200#declarationfonctions"/>
     <item algoitem="VARIABLES" code="100#declarationsvariables">
         <item algoitem="Deposit EST_DU_TYPE NOMBRE" code="1#NOMBRE#Deposit"/>
@@ -20,7 +20,7 @@
         <item algoitem="SI (isOverdraft==&quot;y&quot; OU isOverdraft==&quot;Y&quot;) ALORS" code="6#isOverdraft==&quot;y&quot; OU isOverdraft==&quot;Y&quot;">
             <item algoitem="DEBUT_SI" code="7#debutsi"/>
             <item algoitem="LIRE Overdraft" code="2#Overdraft#pasliste"/>
-            <item algoitem="TANT_QUE (Overdraft&lt;100 ET Overdraft>2000) FAIRE" code="15#Overdraft&lt;100 ET Overdraft>2000">
+            <item algoitem="TANT_QUE (Overdraft&lt;100 OU Overdraft>2000) FAIRE" code="15#Overdraft&lt;100 OU Overdraft>2000">
                 <item algoitem="DEBUT_TANT_QUE" code="16#debuttantque"/>
                 <item algoitem="LIRE Overdraft" code="2#Overdraft#pasliste"/>
                 <item algoitem="FIN_TANT_QUE" code="17#fintantque"/>
