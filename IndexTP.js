@@ -1,34 +1,37 @@
-let deposit = parseInt("");
-let overdraft = parseInt("");
-let balance = parseInt("");
-const yesOverdraft = prompt(`Souhaitez vous un découvert ${""}`)
+let deposit;
+let overdraft;
 
 alert("Bienvenue chez GTM Bank");
+const yesOverdraft = prompt(
+  `Souhaitez vous un découvert y OU Y pour oui et autre pour non`
+);
 
-if (yesOverdraft === "y" || "Y") {
-    let overdraft; 
-    prompt(overdraft);
-    while (overdraft<100 && overdraft>2000) {
-        alert("Veuillez choisir un montant de découert entre 100 et 2000 euros svp");
-        prompt(`Choisissez votre découvert autorisé ${overdraft}`)
-    }
-    alert(`Le montant de votre découvert est de ${overdraft}`);
-    prompt(`Veuillez indiquer le montant de votre dépot ${deposit}`);
-    while (deposit<500) {
-        prompt(deposit);
-    }
-    else {
-        let overdraft = 0;
-        prompt(`Veuillez indiquer le montant de votre dépot ${deposit}`);
-        while (deposit<500) {
-            alert(`Le montant de votre dépot doit etre supérieur à ${deposit}`)
-            prompt(`Veuillez indiquer le montant de votre dépot ${deposit}`);
-        }
-    }
-    alert(`Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et votre découvert autorisé est de ${overdraft}`)
-};
+if (yesOverdraft == "y" || yesOverdraft == "Y") {
+  overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
+  while (parseInt(overdraft) < 100 || parseInt(overdraft) > 2000) {
+    alert(
+      "Veuillez choisir un montant de découvert entre 100 et 2000 euros svp"
+    );
+    overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
+  }
+  alert(`Le montant de votre découvert est de ${overdraft}`);
+  deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
+  while (parseInt(deposit) < 500) {
+    deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
+  }
+  deposit = parseInt(deposit);
 
-alert(`Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et votre découvert autorisé est de ${overdraft}`)
-
-
-|| (yesOverdraft === "Y")
+  alert(
+    `Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et votre découvert autorisé est de ${overdraft}`
+  );
+} else if (yesOverdraft != "y" || yesOverdraft != "Y") {
+  overdraft = 0;
+  deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
+  while (parseInt(deposit) < 500) {
+    deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
+  }
+  deposit = parseInt(deposit);
+  alert(
+    `Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et le montant de votre découvert est de ${overdraft}`
+  );
+}
