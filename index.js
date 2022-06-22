@@ -14,6 +14,12 @@ while(decouAut<100 || decouAut>2000){
 
 let decouUtl= prompt("Saisissez votre découvert utilisé");
 decouUtl=Number(decouUtl);
+while(decouUtl>decouAut){
+    alert("Votre découvert utilisé ne peut pas être supérieur à votre découvert autorisé");
+    decouUtl= prompt("Saisissez votre découvert utilisé");
+    decouUtl=Number(decouUtl);
+}
+
 let nbrJour= prompt("Depuis combien de jour êtes-vous à découvert");
 nbrJour=Number(nbrJour);
 
