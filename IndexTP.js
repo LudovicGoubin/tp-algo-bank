@@ -5,10 +5,10 @@ const yesOverdraft = prompt(`Souhaitez vous un découvert ${""}`)
 
 alert("Bienvenue chez GTM Bank");
 
-if (yesOverdraft == "y") OR (yesOverdraft == "Y") {
+if (yesOverdraft === "y" || "Y") {
     let overdraft; 
     prompt(overdraft);
-    while (overdraft<100) AND (overdraft>2000) {
+    while (overdraft<100 && overdraft>2000) {
         alert("Veuillez choisir un montant de découert entre 100 et 2000 euros svp");
         prompt(`Choisissez votre découvert autorisé ${overdraft}`)
     }
@@ -29,3 +29,6 @@ if (yesOverdraft == "y") OR (yesOverdraft == "Y") {
 };
 
 alert(`Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et votre découvert autorisé est de ${overdraft}`)
+
+
+|| (yesOverdraft === "Y")
