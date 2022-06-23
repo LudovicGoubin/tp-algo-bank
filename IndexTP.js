@@ -35,3 +35,6 @@ if (yesOverdraft == "y" || yesOverdraft == "Y") {
     `Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et le montant de votre découvert est de ${overdraft}`
   );
 }
+// alert(
+//   `Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et le montant de votre découvert est de ${overdraft}`
+// );
