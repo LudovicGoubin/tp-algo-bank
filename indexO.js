@@ -1,8 +1,17 @@
 // javascript objet tp algobox
 // dev1
 
-let deposit;
-let overdraft;
+class compte{
+    constructor(deposit, overdraft){
+        this.deposit = deposit;
+        this.overdraft = overdraft;
+    }
+    toString(){
+        return "Vos informations bancaires sont les suivantes : "+"\n"+
+        "Le solde de votre compte est de : "+this.deposit+"\n"+
+        "Le montant de votre découvert autorisé est de : "+this.overdraft;
+    }
+}
 
 alert("Bienvenue chez GTM Bank");
 const yesOverdraft = prompt(
@@ -10,34 +19,28 @@ const yesOverdraft = prompt(
 );
 
 if (yesOverdraft == "y" || yesOverdraft == "Y") {
-  overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
-  while (parseInt(overdraft) < 100 || parseInt(overdraft) > 2000) {
+  do {
+    this.overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
+  }while(isNaN(this.overdraft));
     alert(
       "Veuillez choisir un montant de découvert entre 100 et 2000 euros svp"
     );
-    overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
-  }
-  alert(`Le montant de votre découvert est de ${overdraft}`);
-  deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
-  while (parseInt(deposit) < 500) {
-    deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
-  }
-  deposit = parseInt(deposit);
+    do{
+        this.overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
+    }while(isNaN(this.overdraft) || this.overdraft < 100 || this.overdraft > 2000);
+  do{
+    this.deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
+}while(isNaN(this.deposit) || this.deposit < 500);
 
-  alert(
-    `Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et votre découvert autorisé est de ${overdraft}`
-  );
 } else if (yesOverdraft != "y" || yesOverdraft != "Y") {
-  overdraft = 0;
-  deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
-  while (parseInt(deposit) < 500) {
-    deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
-  }
-  deposit = parseInt(deposit);
-  alert(
-    `Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et le montant de votre découvert est de ${overdraft}`
-  );
+  this.overdraft = 0;
+  do{
+    this.deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
+  }while(isNaN(this.deposit) || this.deposit < 500)
 }
+
+document.write(compte.toString());
+/*
 // alert(
 //   `Vos informations bancaires sont les suivantes: le solde de votre compte est de ${deposit} et le montant de votre découvert est de ${overdraft}`
 // );
@@ -88,3 +91,36 @@ if (yesOverdraft == "y" || yesOverdraft == "Y") {
 
 
 // dev3
+
+let decouAut = prompt("Saisissez votre découvert autorisé");
+decouAut = Number(decouAut);
+
+if (decouAut == 0) {
+    alert("Découvert non autorisé, pas d'Agios");
+}
+while (decouAut < 100 || decouAut > 2000) {
+    alert("Le découvert autorisé doit être entre 100 et 2000 euros");
+    decouAut = prompt("Saisissez votre découvert autorisé");
+    decouAut = Number(decouAut);
+}
+
+let decouUtl = prompt("Saisissez votre découvert utilisé");
+decouUtl = Number(decouUtl);
+while (decouUtl > decouAut) {
+    alert("Votre découvert utilisé ne peut pas être supérieur à votre découvert autorisé");
+    decouUtl = prompt("Saisissez votre découvert utilisé");
+    decouUtl = Number(decouUtl);
+}
+
+let nbrJour = prompt("Depuis combien de jour êtes-vous à découvert");
+nbrJour = Number(nbrJour);
+
+while (nbrJour < 1 || nbrJour > 365) {
+    alert("Le nombre de jour doit être compris entre 1 et 365");
+    nbrJour = prompt("Depuis combien de jour êtes-vous à découvert");
+    nbrJour = Number(nbrJour);
+}
+let varAgios = decouUtl * nbrJour * (10 / 100) / 365;
+varAgios = varAgios.toFixed(2);
+alert("Avec un taux de 10%, vos agios à payer sont de : " + varAgios + "€");
+*/
