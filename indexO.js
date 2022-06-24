@@ -1,42 +1,55 @@
 // javascript objet tp algobox
 // dev1
 
-class compte{
-    constructor(deposit, overdraft){
-        this.deposit = deposit;
-        this.overdraft = overdraft;
+class compte {
+    constructor() {
+        this.deposit = 0;
+        this.overdraft = 0;
     }
-    toString(){
-        return "Vos informations bancaires sont les suivantes : "+"\n"+
-        "Le solde de votre compte est de : "+this.deposit+"\n"+
-        "Le montant de votre découvert autorisé est de : "+this.overdraft;
+    toString() {
+        return "Vos informations bancaires sont les suivantes : " + "\n" +
+            "Le solde de votre compte est de : " + this.deposit + "\n" +
+            "Le montant de votre découvert autorisé est de : " + this.overdraft;
+    }
+
+    withOverdraft() {
+        do {
+            this.overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
+        } while (isNaN(this.overdraft) || this.overdraft < 100 || this.overdraft > 2000);
+        alert(
+            "Veuillez choisir un montant de découvert entre 100 et 2000 euros svp"
+        );
+        do {
+            this.overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
+        } while (isNaN(this.overdraft) || this.overdraft < 100 || this.overdraft > 2000);
+        do {
+            this.deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
+        } while (isNaN(this.deposit) || this.deposit < 500);
+    }
+
+    withOutOverdraft() {
+        if (yesOverdraft != "y" || yesOverdraft != "Y") {
+            this.overdraft = 0;
+            do {
+                this.deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
+            } while (isNaN(this.deposit) || this.deposit < 500)
+        }
     }
 }
 
 alert("Bienvenue chez GTM Bank");
 const yesOverdraft = prompt(
-  `Souhaitez vous un découvert y OU Y pour oui et autre pour non`
+    `Souhaitez vous un découvert y OU Y pour oui et autre pour non`
 );
 
 if (yesOverdraft == "y" || yesOverdraft == "Y") {
-  do {
-    this.overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
-  }while(isNaN(this.overdraft));
-    alert(
-      "Veuillez choisir un montant de découvert entre 100 et 2000 euros svp"
-    );
-    do{
-        this.overdraft = prompt(`Veuillez indiquer le montant de votre découvert`);
-    }while(isNaN(this.overdraft) || this.overdraft < 100 || this.overdraft > 2000);
-  do{
-    this.deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
-}while(isNaN(this.deposit) || this.deposit < 500);
-
-} else if (yesOverdraft != "y" || yesOverdraft != "Y") {
-  this.overdraft = 0;
-  do{
-    this.deposit = prompt(`Veuillez indiquer le montant de votre dépot`);
-  }while(isNaN(this.deposit) || this.deposit < 500)
+    const newUtil = new compte();
+    newUtil.withOverdraft;
+    newUtil.toString();
+}else{
+    const newUtil = new compte();
+    newUtil.withOutOverdraft;
+    newUtil.toString();
 }
 
 document.write(compte.toString());
