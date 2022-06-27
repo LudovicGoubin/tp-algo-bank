@@ -1,12 +1,23 @@
-alert("Bienvenue chez GTM Bank");
+let choice = document.getElementById("choice");
 
-const yOverdraft = document.getElementById("#y");
-const noOverdraft = document.getElementById("#n");
-const inputOverdraft = document.querySelector(`input[type="text"]`);
+choice.addEventListener("input", function () {
+  let choice_value;
 
-yOverdraft.addEventListener("select", withOverdraft());
-noOverdraft.addEventListener("select", withoutOverdraft());
+  choice_value = document.querySelectorAll("input[name=yesOverdraft]");
 
-inputOverdraft.addEventListener("input", (e) => {
-  inputOverdraft = e.target.value;
+  for (let i = 0; i < choice_value.length; i++) {
+    console.log(choice_value[i].checked, choice_value[i].value);
+
+    if (choice_value[i].checked && choice_value[i].value == "y") {
+      document.querySelector("#hidden").style.visibility = "visible";
+    } else if (choice_value[i].checked && choice_value[i].value == "n") {
+      document.querySelector("#hidden").style.visibility = "hidden";
+    }
+  }
 });
+
+/// Ou
+
+document.getElementById("deposit").disabled = false;
+
+///document.querySelector('#deposit').removeAttribute('disabled')
