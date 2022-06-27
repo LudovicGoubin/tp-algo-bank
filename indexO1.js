@@ -1,5 +1,6 @@
 // javascript objet tp algobox
 // dev1
+//// copie 
 
 class compte {
   constructor() {
