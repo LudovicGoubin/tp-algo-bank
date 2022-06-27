@@ -1,16 +1,12 @@
 alert("Bienvenue chez GTM Bank");
 
-let yesOverdraft = prompt(
-  `Souhaitez vous un découvert y OU Y pour oui et autre pour non`
-);
+const yOverdraft = document.getElementById("#y");
+const noOverdraft = document.getElementById("#n");
+const inputOverdraft = document.querySelector(`input[type="text"]`);
 
-let newUser = new compte();
+yOverdraft.addEventListener("select", withOverdraft());
+noOverdraft.addEventListener("select", withoutOverdraft());
 
-if (yesOverdraft.toLowerCase() === "y") {
-  // toLowerCase permet d'assimiler les minuscules aux majuscules
-  newUser.withOverdraft();
-} else {
-  newUser.withoutOverdraft();
-}
-
-document.write(newUser.toHTML());
+inputOverdraft.addEventListener("input", (e) => {
+  inputOverdraft = e.target.value;
+});
