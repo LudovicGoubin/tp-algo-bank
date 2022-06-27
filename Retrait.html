@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="retrait.css" />
-
-
+    <title>Retrait bancaire</title>
 </head>
+
 <body>
-    <form >
-    <h1>Etat du solde</h1><br>
+    <form>
+        <h1>Retrait</h1>
+        <label> Etat du solde </label>
+        <label for="solde">solde : </label>
+        <input type="number" id="solde">
 
-    <label for="solde">solde : </label>
-    <input type="number" id="solde"><br>
-    
-    <label for="OD">découvert autorisé : </label>
-    <input type="number" id="OD"><br>
+        <label for="OD">découvert autorisé : </label>
+        <input type="number" id="OD">
 
-    <label for="MR">Montant du retrait  : </label>
-    <input autofocus type="number" id="MR">
-    <input  type="button" value=" Effacer le retrait "><br>
-    <input type="button" value=" ouvrire un compte ">
-    <input type="button" value=" agios ">
-    <input type="button" value=" retrait ">
+        <label for="MR">Montant du retrait : </label>
+        <input autofocus type="number" id="MR">
+        <input type="button" value=" Effacer le retrait ">
+        <input type="button" name = "newCompte" value="Ouvrir un nouveau compte" id="newCompte">
+        <input type="button" name = "retrait" value="Faire un retrait" id="retrait">
+        <input type="button" name = "agios" value="Calcul des Agios" id="agios">
 
-</form>
+    </form>
 
 </body>
+
 </html>
