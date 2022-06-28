@@ -31,7 +31,6 @@ input {
   line-height: 1.8;
 }
 
-
 input[type="radio"],
 label[for="y"],
 label[for="n"] {
@@ -43,10 +42,19 @@ input[type="number"] {
   width: 50%;
 }
 
-#hidden{
+#hidden {
   visibility: hidden;
 }
 /* 
 .hidden {
   display: none;
 } */
+
+p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: aliceblue;
+  text-align: center;
+  font-size: 1.1rem;
+  background: red;
+  border-radius: 7%;
+}
