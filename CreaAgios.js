@@ -15,10 +15,8 @@ let calcAgios = document.getElementById("calcAgios"); //créer variable qui réc
 calcAgios.addEventListener("click", function(){ //Affecter à cette variable un évènement via "click" qui s'active dès qu'on click sur le bouton
   let D = days.value; //au moment du click récupère la valeur saisie par l'utilisateur pour le nombre de jour (Days)
   sessionStorage.setItem("Overdraft", 200); //A supprimer lorsque les travaux seront mergés
-  let Du = sessionStorage.getItem("Overdraft"); //a remplacer par la bonne clé
-  let a = new compte()
-  a.resagios()
+  let Du = sessionStorage.getItem("usedOverdraft"); //a remplacer par la bonne clé
+  let a = new compte();
+  let b = a.resagios();
+  document.getElementById("p2").innerHTML = "Le montant de vos agios à payer est de " + b;
 })
-
-
-
