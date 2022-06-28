@@ -1,16 +1,23 @@
-alert("Bienvenue chez GTM Bank");
+let choice = document.getElementById("choice");
 
-let yesOverdraft = prompt(
-  `Souhaitez vous un découvert y OU Y pour oui et autre pour non`
-);
+choice.addEventListener("input", function () {
+  let choice_value;
 
-let newUser = new compte();
+  choice_value = document.querySelectorAll("input[name=yesOverdraft]");
 
-if (yesOverdraft.toLowerCase() === "y") {
-  // toLowerCase permet d'assimiler les minuscules aux majuscules
-  newUser.withOverdraft();
-} else {
-  newUser.withoutOverdraft();
-}
+  for (let i = 0; i < choice_value.length; i++) {
+    console.log(choice_value[i].checked, choice_value[i].value);
 
-document.write(newUser.toHTML());
+    if (choice_value[i].checked && choice_value[i].value == "y") {
+      document.querySelector("#hidden").style.visibility = "visible";
+    } else if (choice_value[i].checked && choice_value[i].value == "n") {
+      document.querySelector("#hidden").style.visibility = "hidden";
+    }
+  }
+});
+
+/// Ou
+
+document.getElementById("deposit").disabled = false;
+
+///document.querySelector('#deposit').removeAttribute('disabled')

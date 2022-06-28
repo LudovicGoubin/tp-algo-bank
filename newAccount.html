@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,26 +12,73 @@
     <main>
       <h1>Ouverture d'un nouveau compte</h1>
       <form action="">
-        <label>Voulez-vous un découvert ?</label>
-        <input type="radio" id="n" name="yesOverdraft" value="n" />
-        <label for="n">Non</label>
-        <input type="radio" id="y" name="yesOverdraft" value="n" />
-        <label for="y">Oui</label>
+        <div id="choice">
+          <label>Voulez-vous un découvert ?</label>
+
+          <input type="radio" id="n" name="yesOverdraft" value="n" />
+
+          <label for="n">Non</label>
+
+          <input type="radio" id="y" name="yesOverdraft" value="y" />
+
+          <label for="y">Oui</label>
+        </div>
 
         <!--Activer seulement si la réponse est oui-->
-        <label for="overdraft"
+
+        <div id="hidden">
+          <label for="overdraft"
+            >Choisissez le montant de votre découvert :
+          </label>
+
+          <input
+            type="number"
+            id="overdraft"
+            name="overdraft"
+            min="100"
+            max="2000"
+          />
+        </div>
+
+        <label for="deposit"
+          >Choisissez le montant de votre dépôt initial :
+        </label>
+
+        <input type="number" id="deposit" name="deposit" min="500" disabled />
+
+        <input type="submit" id="confirm" value="Valider" />
+        <label>Voulez-vous un découvert ?</label>
+        <label for="n">Non</label>
+        <input
+          class="yesOverdraft"
+          type="radio"
+          id="n"
+          name="yesOverdraft"
+          value="n"
+        />
+        <label for="y">Oui</label>
+        <input
+          class="yesOverdraft"
+          type="radio"
+          id="y"
+          name="yesOverdraft"
+          value="y"
+        />
+
+        <!--Activer seulement si la réponse est oui-->
+        <label for="overdraft" class="hidden" hidden="true"
           >Choisissez le montant de votre découvert :
         </label>
         <input
+          hidden="true"
           type="number"
           id="overdraft"
           name="overdraft"
           min="100"
           max="2000"
-          disabled
+          class="hidden"
         />
-
-        <label for="overdraft"
+        <label for="deposit"
           >Choisissez le montant de votre dépôt initial :
         </label>
         <input type="number" id="deposit" name="deposit" min="500" disabled />
@@ -39,6 +86,6 @@
         <input type="submit" id="confirm" value="Valider" />
       </form>
     </main>
-    <script src="./indexO1.js"></script>
+    <script src="./CreaCompte.js"></script>
   </body>
 </html>
