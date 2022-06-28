@@ -25,6 +25,11 @@ export class compte {
     );
   }
 
+
+  withoutOverdraft() {
+    this.overdraft = 0;
+  }
+
   withO() {
     if (this.withdrawal >= parseInt(this.overdraft + this.account)) {
       alert("Votre solde est insuffisant.");
@@ -34,22 +39,19 @@ export class compte {
   }
 
   withoutO() {
+
     if (this.account >= this.withdrawal) {
+
       this.newAccount = this.account - this.withdrawal;
+
     } else {
       alert("Votre solde est insuffisant.");
     }
   }
 
   resagios() {
-    if (this.usedOverdraft == 0) {
-      alert(
-        `Vous n'avez pas utilisé de découvert donc vous n'avez pas d'agios`
-      )}
-      if(this.usedOverdraft > 0){
     this.agios = (this.usedOverdraft * this.days * 0.1) / 365;
     this.agios = this.agios.toFixed(2);
-    return this.agios
-    }
+
   }
 }

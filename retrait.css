@@ -1,6 +1,6 @@
 main {
     padding: 10px;
-    background-color: cornflowerblue;
+    background-color: rgb(65, 115, 207);
     border: 2px solid black;
     border-radius: 5px;
     width: 60%;
@@ -15,8 +15,15 @@ main {
     text-shadow: 2px 2px 4px #000000;
 }
   
+form {
+    margin-left: auto;
+    margin-right: auto;
 
-button{
+    line-height: 2;
+    width: 60%;
+}
+
+input{
     display:block;
     background-color:#f4f7f7;
     color:cornflowerblue;
@@ -25,7 +32,5 @@ button{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    border-radius: 10px;
-    
 
 }
