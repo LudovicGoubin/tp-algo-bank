@@ -2,7 +2,7 @@
 // dev1
 //// copie 
 
-class compte {
+export class compte {
   constructor() {
     (this.deposit = 0),
       (this.overdraft = 0),
