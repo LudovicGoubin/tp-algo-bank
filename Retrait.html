@@ -6,21 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retrait bancaire</title>
+    <link rel="stylesheet" type="text/css" href="retrait.css" />
+
+
 </head>
 
 <body>
     <form>
+
         <h1>Retrait</h1>
-        <label> Etat du solde </label>
+
+        <label> Etat du solde </label><br><br>
+
         <label for="solde">solde : </label>
-        <input type="number" id="solde">
+        <input type="number" id="solde"><br>
 
         <label for="OD">découvert autorisé : </label>
-        <input type="number" id="OD">
+        <input type="number" id="OD"><br>
 
         <label for="MR">Montant du retrait : </label>
         <input autofocus type="number" id="MR">
-        <input type="button" value=" Effacer le retrait ">
+        <input type="button" value=" Effacer le retrait "><br>
+
         <input type="button" name = "newCompte" value="Ouvrir un nouveau compte" id="newCompte">
         <input type="button" name = "retrait" value="Faire un retrait" id="retrait">
         <input type="button" name = "agios" value="Calcul des Agios" id="agios">

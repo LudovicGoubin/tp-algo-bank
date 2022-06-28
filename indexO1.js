@@ -62,7 +62,7 @@ class compte {
     } while (isNaN(this.deposit) || this.deposit < 500);
   }
 
-  withO() {
+  withO() {   
     do {
       this.account = prompt("Quel est le solde actuel de votre compte ?");
     } while (isNaN(this.account));
