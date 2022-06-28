@@ -18,6 +18,76 @@ choice.addEventListener("input", function () {
 
 /// Ou
 
-document.getElementById("deposit").disabled = false;
+// document.getElementById("deposit").disabled = false;
 
-///document.querySelector('#deposit').removeAttribute('disabled')
+choice.addEventListener("input", function () {
+  document.getElementById("deposit").disabled = false;
+});
+
+const noOverdraft = document.querySelector("#n").value;
+
+let deposit = document.getElementById("deposit");
+
+let overdraft = document.getElementById("overdraft");
+
+const sub = document.getElementById("confirm");
+
+document.querySelector("p").style.textAlign = "center";
+
+sub.addEventListener("click", function (e) {
+  e.preventDefault();
+  let valueD = deposit.value;
+  let overdraftA = overdraft.value;
+  if (document.getElementById("n").checked && valueD >= 500) {
+    document.querySelector("p").innerHTML = "";
+    sessionStorage.setItem("deposit", valueD);
+    sessionStorage.setItem("overdraft", 0);
+  } else if (document.getElementById("n").checked && valueD <= 500) {
+    document.querySelector("p").innerHTML =
+      "Votre dépot doit etre supérieur ou égal à 500€";
+  } else if (
+    valueD < 500 ||
+    (isNaN(valueD) && overdraftA < 100) ||
+    overdraftA > 2000 ||
+    isNaN(overdraftA)
+  ) {
+    document.querySelector("p").innerHTML =
+      "Votre dépot doit etre supérieur ou égal à 500€ et le montant de votre découvert doit être compris entre 100 et 2000€";
+  } else if (overdraftA < 100 || overdraftA > 2000 || isNaN(overdraftA)) {
+    document.querySelector("p").innerHTML =
+      "Le montant de votre découvert doit être entre 100 et 2000€";
+  } else if (valueD < 500 || isNaN(valueD)) {
+    document.querySelector("p").innerHTML =
+      "Votre dépot doit etre supérieur ou égal à 500€";
+  } else {
+    document.querySelector("p").innerHTML = "";
+    sessionStorage.setItem("deposit", valueD);
+    sessionStorage.setItem("overdraft", overdraftA);
+    console.log(sessionStorage.getItem("deposit", valueD));
+    console.log(sessionStorage.getItem("overdraft", overdraftA));
+  }
+});
+
+// sub.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   let overdraftA = overdraft.value;
+//   if (overdraftA < 100 || overdraftA > 2000 || isNaN(overdraftA)) {
+//     document.querySelector("p").innerHTML =
+//       "Le montant de votre découvert doit être entre 200 et 2000€";
+//     document.querySelector("p").style.textAlign = "center";
+//   } else {
+//     document.querySelector("p").innerHTML = "";
+//   }
+// });
+
+// sub.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   let valueD = deposit.value;
+//   if (valueD < 500 || isNaN(valueD)) {
+//     document.querySelector("p").innerHTML =
+//       "Votre dépot doit etre supérieur ou égal à 500€";
+//     document.querySelector("p").style.textAlign = "center";
+//   } else {
+//     document.querySelector("p").innerHTML = "";
+//   }
+// });
