@@ -1,6 +1,6 @@
 main {
     padding: 10px;
-    background-color: cornflowerblue;
+    background-color: rgb(65, 115, 207);
     border: 2px solid black;
     border-radius: 5px;
     width: 60%;
@@ -14,23 +14,7 @@ main {
     color: aliceblue;
     text-shadow: 2px 2px 4px #000000;
 }
-
-label {
-  font-size: 33px;
-  font-weight: 500;
-  color: #000000;
-}
-input{
-    display:block;
-    background-color:#23b8b8;
-    color:rgb(0, 0, 0);
-    padding: 6px;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-
-}
+  
 form {
     margin-left: auto;
     margin-right: auto;
@@ -38,13 +22,15 @@ form {
     line-height: 2;
     width: 60%;
 }
-h1{display:block;
-    
-    color:rgb(18, 139, 157);
-    padding: 0px;
-    width: 40%;
-    margin-left: 50px;
+
+input{
+    display:block;
+    background-color:#f4f7f7;
+    color:cornflowerblue;
+    padding: 5px;
+    width: 50%;
+    margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
-   
+    margin-bottom: 10px;
+
 }

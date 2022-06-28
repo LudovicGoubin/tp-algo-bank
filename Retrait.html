@@ -9,28 +9,37 @@
     <link rel="stylesheet" type="text/css" href="retrait.css" />
 
 
+
 </head>
 
 <body>
+    <main  id="main">
+        <h1>Retrait</h1>
+        <p id="msg"></p>
     <form>
 
-        <h1>Retrait</h1>
-        <label> Etat du solde </label>
-        <label for="solde">Solde : </label>
-        <input type="number" id="solde">
+        
 
-        <label for="overdraft">Découvert autorisé : </label>
-        <input type="number" id="overdraft">
+            <ol id="html"></ol>
+   
+
 
         <label for="montantRetrait">Montant du retrait : </label>
         <input autofocus type="number" id="montantRetrait">
-        <input type="button" value=" Effacer le retrait ">
-        <input type="button" name = "newCompte" value="Ouvrir un nouveau compte" id="newCompte">
-        <input type="button" name = "retrait" value="Faire un retrait" id="retrait">
-        <input type="button" name = "agios" value="Calcul des Agios" id="agios">
+        <input type="button" value=" Effectuer le retrait " id="validation">
+
+        <button><a href="Retrait.html">Retrait</a></button>
+        <button><a href="newAccount.html">Ouvrir un nouveau compte</a></button>
+        <button><a href="Agios.html">Calcul des Agios</a></button>
+
+
+
+
+
 
     </form>
-
+    <script src="retrait.js"> </script>
+</main>
 </body>
 
 </html>
