@@ -15,19 +15,16 @@
     <form>
 
         <h1>Retrait</h1>
+        <label> Etat du solde </label>
+        <label for="solde">Solde : </label>
+        <input type="number" id="solde">
 
-        <label> Etat du solde </label><br><br>
+        <label for="overdraft">Découvert autorisé : </label>
+        <input type="number" id="overdraft">
 
-        <label for="solde">solde : </label>
-        <input type="number" id="solde"><br>
-
-        <label for="OD">découvert autorisé : </label>
-        <input type="number" id="OD"><br>
-
-        <label for="MR">Montant du retrait : </label>
-        <input autofocus type="number" id="MR">
-        <input type="button" value=" Effacer le retrait "><br>
-
+        <label for="montantRetrait">Montant du retrait : </label>
+        <input autofocus type="number" id="montantRetrait">
+        <input type="button" value=" Effacer le retrait ">
         <input type="button" name = "newCompte" value="Ouvrir un nouveau compte" id="newCompte">
         <input type="button" name = "retrait" value="Faire un retrait" id="retrait">
         <input type="button" name = "agios" value="Calcul des Agios" id="agios">
