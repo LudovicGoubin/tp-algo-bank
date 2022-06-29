@@ -1,4 +1,4 @@
-import {compte} from "./indexO1.js";
+import {compte} from "./indexO1.js"; //importation de la classe compte présent dans l'index 1
 
 
 let days = document.getElementById("days"); //créer variable qui récupére par l'Id la valeur de Days dans le html
@@ -14,8 +14,7 @@ days.addEventListener("blur", function(){ //Affecter à cette variable un evenè
 let calcAgios = document.getElementById("calcAgios"); //créer variable qui récupère par l'Id la valeur de caclAgios dans le html
 calcAgios.addEventListener("click", function(){ //Affecter à cette variable un évènement via "click" qui s'active dès qu'on click sur le bouton
   let D = days.value; //au moment du click récupère la valeur saisie par l'utilisateur pour le nombre de jour (Days)
-  sessionStorage.setItem("Overdraft", 200); //A supprimer lorsque les travaux seront mergés
-  let Du = sessionStorage.getItem("usedOverdraft"); //a remplacer par la bonne clé
+  let Du = sessionStorage.getItem("usedOverdraft"); //
   let a = new compte();
   let b = a.resagios();
   document.getElementById("p2").innerHTML = "Le montant de vos agios à payer est de " + b;
